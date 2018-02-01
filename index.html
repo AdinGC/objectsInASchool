@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="objects.js"></script>
+    <script src="actions.js"></script>
+    <script src="data.js"></script>
+    <link type="text/css" rel=style href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Create New student-->
+First Name:<input type="text" id="inputStudentFirstName" value="" size="25">
+Last Name:<input type="text" id="inputStudentLasttName" value="" size="25">
+Grade:<input type="text" id="inputStudentGrade" value="" size="25">
+<button id="addStudent" onclick="addStudent()">Add Student</button>
+<br>
+
+<!--Create New Teacher-->
+First Name:<input type="text" id="inputTeacherFirstName" value="" size="25">
+Last Name:<input type="text" id="inputTeacherLastName" value="" size="25">
+Subject:<input type="text" id="inputTeacherSubject" value="" size="25">
+<button id="addTeacher" onclick="addTeacher()">Add Teacher</button>
+<br>
+
+
+<!--Create New Section-->
+Name:<input type="text" id="inputSectionName" value="" size="25">
+Maximum Size:<input type="text" id="inputSectionMaxSize" value="" size="25">
+Teacher:<select id="inputSectionTeacher"> </select>
+<button id="addSection" onclick="addSection()">Add Section</button>
+<br>
+
+<!--Add Student to Section-->
+Add Student:
+<br>
+Name:<select id="studentToAdd"> </select>
+Section: <select id="sectionToAddTo"> </select>
+
+<button id="addStudentToSection" onclick="addStudentToSection(document.getElementById('studentToAdd').value)">Add Student to Section</button>
+<br>
+
+<!--remove student from section ()-->
+Remove Students:
+<br>
+Name:<select id="studentToRemove"> </select>
+Section:<select id="sectionToRemoveFrom"> </select>
+
+
+<button id="removeStudentFromSection" onclick="removeStudentFromSection()">Remove Student from Section</button>
+
+<br>
+ <!--lists all teachers-->
+<button id="listTeachers" onclick="listTeachers()"> List Teachers </button>
+<div id="printTeacherList"></div>
+<br>
+
+<!--lists all teachers-->
+<button id="listStudents" onclick="listStudents()"> List Students </button>
+<div id="printStudentList"></div>
+<br>
+<!--lists all sections-->
+<button id="listSections" onclick="listSections()"> List Sections </button>
+<div id="printSectionList"></div>
+
+
+</body>
+</html>
