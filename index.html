@@ -4,65 +4,110 @@
     <script src="objects.js"></script>
     <script src="actions.js"></script>
     <script src="data.js"></script>
-    <link type="text/css" rel=style href="path/to/font-awesome/css/font-awesome.min.css">
+    <!--<link type="text/css" rel='stylesheet' href="path/to/font-awesome/css/font-awesome.min.css">-->
+    <link type="text/css" rel='stylesheet' href="style.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<!--LEVEL1:displays all actions-->
+<button onclick="start()">Start it UP!</button>
+<div id="container1">
+
+    <!--LEVEL 2: displays student-->
+    <button onclick="displayAddStudent()">Add a student</button>
+    <div id="container2" style="display: none;">
+
 <!--Create New student-->
 First Name:<input type="text" id="inputStudentFirstName" value="" size="25">
 Last Name:<input type="text" id="inputStudentLasttName" value="" size="25">
 Grade:<input type="text" id="inputStudentGrade" value="" size="25">
 <button id="addStudent" onclick="addStudent()">Add Student</button>
 <br>
+   <!--ends container 2-->
+    </div>
 
+    <!--LEVEL 2: displays teacher-->
+    <button onclick="displayAddTeacher()">Add a Teacher</button>
+    <div id="container3" style="display: none;">
 <!--Create New Teacher-->
 First Name:<input type="text" id="inputTeacherFirstName" value="" size="25">
 Last Name:<input type="text" id="inputTeacherLastName" value="" size="25">
 Subject:<input type="text" id="inputTeacherSubject" value="" size="25">
 <button id="addTeacher" onclick="addTeacher()">Add Teacher</button>
 <br>
+    <!--ends container 3-->
+    </div>
 
-
-<!--Create New Section-->
+    <!--LEVEL 2: displays container 4-->
+    <button onclick="displayAddSection()">Add a Section</button>
+    <div id="container4" style="display: none;">
+    <!--Create New Section-->
 Name:<input type="text" id="inputSectionName" value="" size="25">
 Maximum Size:<input type="text" id="inputSectionMaxSize" value="" size="25">
 Teacher:<select id="inputSectionTeacher"> </select>
 <button id="addSection" onclick="addSection()">Add Section</button>
 <br>
+    <!--ends container 4-->
+    </div>
 
+    <button onclick="displayAddStudentToSection()">Add a Student to a Section</button>
+    <div id="container5" style="display: none;">
 <!--Add Student to Section-->
-Add Student:
+
 <br>
 Name:<select id="studentToAdd"> </select>
 Section: <select id="sectionToAddTo"> </select>
 
 <button id="addStudentToSection" onclick="addStudentToSection(document.getElementById('studentToAdd').value)">Add Student to Section</button>
 <br>
+   <!--ends container 5-->
+    </div>
 
-<!--remove student from section ()-->
-Remove Students:
+
+    <!--remove student from section ()-->
+    <button onclick="displayRemoveStudentFromSection()">Remove a Student from a Section</button>
+    <div id="container6" style="display: none;">
 <br>
 Name:<select id="studentToRemove"> </select>
 Section:<select id="sectionToRemoveFrom"> </select>
 
 
 <button id="removeStudentFromSection" onclick="removeStudentFromSection()">Remove Student from Section</button>
-
+    <!--ends container 6-->
+    </div>
 <br>
- <!--lists all teachers-->
+
+
+    <!--starts container 7-->
+
+    <!--lists all teachers-->
 <button id="listTeachers" onclick="listTeachers()"> List Teachers </button>
-<div id="printTeacherList"></div>
+    <div id="container7" style="display: inline;">
+    <div id="printTeacherList"></div>
 <br>
+        <!--ends container 7-->
+    </div>
 
-<!--lists all teachers-->
+<!--lists all students-->
 <button id="listStudents" onclick="listStudents()"> List Students </button>
-<div id="printStudentList"></div>
-<br>
-<!--lists all sections-->
+    <!--starts container 8-->
+    <div id="container8" style="display: inline;">
+    <div id="printStudentList"></div>
+<!--ends container 8-->
+    </div>
+        <br>
+
+    <!--lists all sections-->
 <button id="listSections" onclick="listSections()"> List Sections </button>
+    <!--starts container 9-->
+    <div id="container9" style="display: inline;">
 <div id="printSectionList"></div>
 
+    <!-- ends container 9-->
+</div>
+</div>
 
 </body>
 </html>

@@ -2,6 +2,73 @@ var allStudents=[]
 var allTeachers=[]
 var allSections=[]
 
+//all display container functions
+function start() {
+    changeTeacher();
+    changeSection();
+    changeStudent();
+    var dis = document.getElementById("container1").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container1").style.display = "none";
+    }else{
+
+        document.getElementById("container1").style.display = "inline";
+    }
+}
+
+function displayAddStudent(){
+    var dis = document.getElementById("container2").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container2").style.display = "none";
+    }else{
+
+        document.getElementById("container2").style.display = "inline";
+    }
+
+}
+function displayAddTeacher() {
+    var dis = document.getElementById("container3").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container3").style.display = "none";
+    }else{
+
+        document.getElementById("container3").style.display = "inline";
+    }
+}
+function displayAddSection() {
+    var dis = document.getElementById("container4").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container4").style.display = "none";
+    }else{
+
+        document.getElementById("container4").style.display = "inline";
+    }
+}
+function displayAddStudentToSection() {
+    var dis = document.getElementById("container5").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container5").style.display = "none";
+    }else{
+
+        document.getElementById("container5").style.display = "inline";
+    }
+}
+function displayRemoveStudentFromSection() {
+    var dis = document.getElementById("container6").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container6").style.display = "none";
+    }else{
+
+        document.getElementById("container6").style.display = "inline";
+    }
+}
+
 
 function addStudent(){
 
@@ -131,6 +198,14 @@ function listTeachers(){
     }
     html+="</table>"
     document.getElementById("printTeacherList").innerHTML=html
+    var dis = document.getElementById("container7").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container7").style.display = "none";
+    }else {
+
+        document.getElementById("container7").style.display = "inline";
+    }
 }
 //list students
 function listStudents(){
@@ -146,6 +221,14 @@ function listStudents(){
     }
     html+="</table>"
     document.getElementById("printStudentList").innerHTML=html
+    var dis = document.getElementById("container8").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container8").style.display = "none";
+    }else {
+
+        document.getElementById("container8").style.display = "inline";
+    }
 }
 
 //generates list of students in section for list section function
@@ -161,6 +244,7 @@ function studentList(section){
 }
 //list sections
 function listSections(){
+
     var html="<table border='1'>";
 
     for (var i=0; i<allSections.length; i++){
@@ -174,5 +258,13 @@ function listSections(){
         html+="</td>"
     }
     html+="</table>"
-    document.getElementById("printSectionList").innerHTML=html
+    document.getElementById("printSectionList").innerHTML=html;
+    var dis = document.getElementById("container9").style.display;
+
+    if(dis == "inline"){
+        document.getElementById("container9").style.display = "none";
+    }else {
+
+        document.getElementById("container9").style.display = "inline";
+    }
 }

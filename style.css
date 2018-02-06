@@ -1,8 +1,29 @@
 body {
-    background-image: url(https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiG_9Ppn-LYAhUF3mMKHajxCygQjRx6BAgAEAY&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fblack-background&psig=AOvVaw0qKstaedhLNC4AoYV7FlXJ&ust=1516390196454575);
-    font-family: sans-serif;
-    background-repeat: repeat;
-    text-align: center;
-    color: white;
-    vertical-align: top;
+    background: rgba(209, 198, 198, 1);
+}
+
+#container1 {
+    display: none;
+}
+
+#container2{
+    position: relative;
+    top: 200px;
+}
+
+#container3{
+    position: relative;
+    top: 200px;
+}
+#container4{
+    position: relative;
+    top: 200px;
+}
+#container5{
+    position: relative;
+    top: 200px;;
+}
+#container6{
+    position: relative;
+    top: 200px;
 }
