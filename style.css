@@ -1,6 +1,8 @@
 body {
-    background: rgba(209, 198, 198, 1);
+/*background-image: url("http://veteranstowingusa.com/wp-content/uploads/2017/03/website-backgrounds-%E2%80%AB289855823%E2%80%AC-%E2%80%AB%E2%80%AC.jpg")*/
+
 }
+
 
 #container1 {
     display: none;
@@ -9,6 +11,7 @@ body {
 #container2{
     position: relative;
     top: 200px;
+    border:1px solid black;
 }
 
 #container3{

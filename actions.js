@@ -2,6 +2,30 @@ var allStudents=[]
 var allTeachers=[]
 var allSections=[]
 
+
+function disableButtons(enableButton) {
+    var x = document.querySelectorAll(".topButton");
+    var firstClick = true;
+
+    for (var i=0; i<x.length; i++){
+        if(x[i].disabled) {
+            x[i].disabled = false;
+            firstClick = false
+        }
+    }
+
+    //if on a first click
+    if(firstClick) {
+        for (var i = 0; i < x.length; i++) {
+            x[i].disabled = true;
+        }
+        enableButton.disabled = false;
+    }
+    //first click
+
+
+}
+
 //all display container functions
 function start() {
     changeTeacher();
@@ -78,6 +102,9 @@ function addStudent(){
     console.log(grade);
     allStudents.push(new Student(firstName, lastName, grade));
     changeStudent();
+    document.getElementById("inputStudentFirstName").value="";
+    document.getElementById("inputStudentLasttName").value="";
+    document.getElementById("inputStudentGrade").value="";
     console.log(allStudents);
 }
 
@@ -261,10 +288,10 @@ function listSections(){
     document.getElementById("printSectionList").innerHTML=html;
     var dis = document.getElementById("container9").style.display;
 
-    if(dis == "inline"){
-        document.getElementById("container9").style.display = "none";
+    if(dis == "none"){
+        document.getElementById("container9").style.display = "inline";
     }else {
 
-        document.getElementById("container9").style.display = "inline";
+        document.getElementById("container9").style.display = "none";
     }
 }
