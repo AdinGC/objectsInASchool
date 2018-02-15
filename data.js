@@ -14,11 +14,10 @@ allTeachers.push(new Teacher("Keldon","Clegg","History"));
 allTeachers.push(new Teacher("Matt","Albinson","CS"));
 allTeachers.push(new Teacher("Carl","Rogers","English"));
 
-allSections.push(new Section("Math 2",30, "Nakia"));
-allSections.push(new Section("Math 3",25,"Weitz"));
-allSections.push(new Section("US History",30,"Clegg"));
-allSections.push(new Section("CS",32, "Albinson"));
-allSections.push(new Section("English",30, "Rogers"));
+// allSections.push(new Section("CS",3,allTeachers[2]));
+//
+// allSections[0].students = [allStudents[0],allStudents[1]];
 
 var allItems = [allStudents,allTeachers,allSections];
 
+console.log(allItems);

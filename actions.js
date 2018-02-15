@@ -111,9 +111,11 @@ function addStudent(){
 function addTeacher(){
     var firstName=document.getElementById("inputTeacherFirstName").value;
     var lastName=document.getElementById("inputTeacherLastName").value;
-    var subject=document.getElementById("inputTeacherSubject").value;
-    allTeachers.push(new Teacher(firstName, lastName, subject));
+    // var subject=document.getElementById("inputTeacherSubject").value;
+    allTeachers.push(new Teacher(firstName, lastName));
     changeTeacher();
+    document.getElementById("inputTeacherFirstName").value="";
+    document.getElementById("inputTeacherLastName").value="";
     console.log(allTeachers);
 }
 
@@ -122,9 +124,12 @@ function addSection(){
     var maxSize=document.getElementById("inputSectionMaxSize").value;
     var teacher=idToTeacher(document.getElementById("inputSectionTeacher").value);
     console.log(teacher);
-
+    teacher.subject+=" ," + name
     allSections.push(new Section(name, maxSize, teacher));
     changeSection();
+    document.getElementById("inputSectionName").value="";
+    // document.getElementById("inputSectionTeacher").value="";
+    document.getElementById("inputSectionMaxSize").value="";
     console.log(allSections);
 }
 
@@ -199,9 +204,16 @@ function idToTeacher(id){
 
 //On button click for add student to section, this pulls object of the student and section and passes them to the object constructor
 function addStudentToSection(){
+    document.getElementById("tooManyStudents").innerHTML="";
+
     var stud=idToStudent((document.getElementById('studentToAdd').value));
     var sect=idToSection((document.getElementById('sectionToAddTo').value));
-    sect.addStudent(stud);
+     if (sect.currentSize>=sect.maxSize){
+      document.getElementById("tooManyStudents").innerHTML="This class is full";
+     }else{
+         sect.addStudent(stud);
+
+     }
 
 }
 
@@ -215,6 +227,7 @@ function removeStudentFromSection() {
 function listTeachers(){
 
     var html="<table border='1'>";
+    html+="<tr> <th>First Name</th><th>Last Namee</th><th>Subjects </th>"
 
     for (var i=0; i<allTeachers.length; i++){
         html+="<tr>";
@@ -238,6 +251,7 @@ function listTeachers(){
 function listStudents(){
 
     var html="<table border='1'>";
+    html+="<tr> <th>First Name</th><th>Last Namee</th><th>Grade </th>"
 
     for (var i=0; i<allStudents.length; i++){
         html+="<tr>";
@@ -273,6 +287,7 @@ function studentList(section){
 function listSections(){
 
     var html="<table border='1'>";
+    html+="<tr> <th>Section</th><th>Max Size</th><th>Current Size</th><th>Students</th><th>Teacher</th>"
 
     for (var i=0; i<allSections.length; i++){
         html+="<tr>";

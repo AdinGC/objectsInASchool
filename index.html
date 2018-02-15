@@ -4,27 +4,33 @@
     <script src="objects.js"></script>
     <script src="actions.js"></script>
     <script src="data.js"></script>
-    <!--<link type="text/css" rel='stylesheet' href="path/to/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link type="text/css" rel='stylesheet' href="style.css">
     <meta charset="UTF-8">
+
+
+
     <title>Title</title>
 </head>
 <body>
 
 
 
-
+<h2> Adin's Super Duper School Managment System</h2>
+<br>
+(Because students are only objects)
+<br>
 <!--LEVEL1:displays all actions and holds buttons-->
-<button onclick="start()">Start it UP!</button>
+<button class="btn btn-success btn btn-primary btn-lg" onclick="start()">Launch Program</button>
 <div id="container1">
-    <button class="topButton" onclick="disableButtons(this);displayAddStudent()">Add a student</button>
-    <button class="topButton" onclick="disableButtons(this);displayAddTeacher()">Add a Teacher</button>
-    <button class="topButton" onclick="disableButtons(this);displayAddSection()">Add a Section</button>
-    <button class="topButton" onclick="disableButtons(this);displayAddStudentToSection()">Add a Student to a Section</button>
-    <button class="topButton" onclick="disableButtons(this);displayRemoveStudentFromSection()">Remove a Student from a Section</button>
-    <button class="topButton" id="listStudents" onclick="disableButtons(this);listStudents()"> List Students </button>
-    <button class="topButton" id="listSections" onclick="disableButtons(this);listSections()"> List Sections </button>
-    <button class="topButton" id="listTeachers" onclick="disableButtons(this);listTeachers()"> List Teachers </button>
+    <button class="topButton btn btn-primary" onclick="disableButtons(this);displayAddStudent()">Add a student</button>
+    <button class="topButton btn btn-primary" onclick="disableButtons(this);displayAddTeacher()">Add a Teacher</button>
+    <button class="topButton btn btn-primary" onclick="disableButtons(this);displayAddSection()">Add a Section</button>
+    <button class="topButton btn btn-primary" onclick="disableButtons(this);displayAddStudentToSection()">Add a Student to a Section</button>
+    <button class="topButton btn btn-primary" onclick="disableButtons(this);displayRemoveStudentFromSection()">Remove a Student from a Section</button>
+    <button class="topButton btn btn btn-info" id="listStudents" onclick="disableButtons(this);listStudents()"> List Students </button>
+    <button class="topButton btn btn btn-info" id="listSections" onclick="disableButtons(this);listSections()"> List Sections </button>
+    <button class="topButton btn btn btn-info" id="listTeachers" onclick="disableButtons(this);listTeachers()"> List Teachers </button>
     <br>
 
 </div>
@@ -34,7 +40,7 @@
 First Name:<input type="text" id="inputStudentFirstName" value="" size="25">
 Last Name:<input type="text" id="inputStudentLasttName" value="" size="25">
 Grade:<input type="text" id="inputStudentGrade" value="" size="25">
-<button id="addStudent" onclick="addStudent()">Add Student</button>
+<button id="addStudent"  onclick="addStudent()">Add Student</button>
     <div id="message" ></div>
 
    <!--ends container 2-->
@@ -44,7 +50,7 @@ Grade:<input type="text" id="inputStudentGrade" value="" size="25">
 <div id="container3" style="display: none;">
 First Name:<input type="text" id="inputTeacherFirstName" value="" size="25">
 Last Name:<input type="text" id="inputTeacherLastName" value="" size="25">
-Subject:<input type="text" id="inputTeacherSubject" value="" size="25">
+<!--Subject:<input type="text" id="inputTeacherSubject" value="" size="25">-->
 <button id="addTeacher" onclick="addTeacher()">Add Teacher</button>
 
     <!--ends container 3-->
@@ -66,6 +72,7 @@ Teacher:<select id="inputSectionTeacher"> </select>
 Name:<select id="studentToAdd"> </select>
 Section: <select id="sectionToAddTo"> </select>
 <button id="addStudentToSection" onclick="addStudentToSection(document.getElementById('studentToAdd').value)">Add Student to Section</button>
+    <div id="tooManyStudents"></div>
 <br>
    <!--ends container 5-->
     </div>
